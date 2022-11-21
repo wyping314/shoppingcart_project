@@ -29,7 +29,10 @@ if (isset($_SESSION["cart"])) {
       $total += $pay;
       echo "<tr><td>{$product[$pid][0]}</td><td>{$product[$pid][1]}</td><td>$cnt</td><td>$pay</td></tr>\n";
    }
-   echo "<tr><th colspan=4>應付金額：<span id=\"tot\">NT\$ ".number_format($total)."</span> 元</th></tr>\n";
+   if($total<=1000){
+      $total*=0.9;
+   }
+   echo "<tr><th colspan=4>應付金額：<span id=\"tot\">NT\$ ".number_format($total*0.8)."</span> 元</th></tr>\n";
 }
 //unset($_SESSION["cart"]);
 ?>

@@ -1,14 +1,7 @@
 <?php
 include "product.php";
 session_start() ;
-$sel="";
-if (isset($_GET["pid"])) {
-      $sel = $_GET["pid"];
-      if (isset($_SESSION["cart"][$sel]))
-           $_SESSION["cart"][$sel]++;
-      else
-           $_SESSION["cart"][$sel]=1;
-}
+
 ?>
 <!DOCTYPE html>
 <html>
